@@ -8,7 +8,7 @@
 
 /* dichiarazione delle funzioni */
 void allocazione_memoria(char ***,
-						 int *);
+			 int *);
 
 void acquisizione_linguaggio(char **,
 							 int);
