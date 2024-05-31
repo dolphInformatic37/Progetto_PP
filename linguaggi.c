@@ -11,19 +11,19 @@ void allocazione_memoria(char ***,
 			 int *);
 
 void acquisizione_linguaggio(char **,
-							 int);
+			     int);
 void unione(char **,
-	        char **,
-			int,
-			int,
-			int,
-			int,
-			int,
-			int);
+	    char **,
+	    int,
+	    int,
+	    int,
+	    int,
+	    int,
+	    int);
 void differenza(char **,											
-		 	    char **,
-				int,
-				int);
+		char **,
+		int,
+		int);
 
 /* definizione delle funzioni */
 
@@ -31,22 +31,22 @@ void differenza(char **,
 int main(void)
 {
 	/* dichiarazione delle variabili locali della funzione */
-	char **ling1, 	/* input: parole contenute nel primo linguaggio */
-	     **ling2; 	/* input: parole contenute secondo linguaggio */
+	char **ling1, 		/* input: parole contenute nel primo linguaggio */
+	     **ling2; 		/* input: parole contenute secondo linguaggio */
 	int dim1,	  	/* input: numero di parole nel primo linguaggio */
-		dim2,		/* input: numero di parole nel secondo linguaggio */
-		diverse, 	/* lavoro: numero di parole diverse fre loro */
-		s,			/* lavoro: indice per la stampa dei linguaggi */
-		m,			/* lavoro: indice per il confronto dei linguaggi */
-		n;	  		/* lavoro: indice per il confronto dei linguaggi */
+	    dim2,		/* input: numero di parole nel secondo linguaggio */
+	    diverse, 		/* lavoro: numero di parole diverse fre loro */
+	    s,			/* lavoro: indice per la stampa dei linguaggi */
+	    m,			/* lavoro: indice per il confronto dei linguaggi */
+	    n;	  		/* lavoro: indice per il confronto dei linguaggi */
 
 	/* allocare la memoria necessaria per i linguaggi */
 	printf("-Primo linguaggio-\n\n");
 	allocazione_memoria(&ling1,
-						&dim1);
+			    &dim1);
 	printf("\n-Secondo linguaggio-\n\n");
 	allocazione_memoria(&ling2,
-						&dim2);
+			    &dim2);
 
 	/* acquisire il primo linguaggio */
 	if (dim1 > 0)
@@ -54,7 +54,7 @@ int main(void)
 		printf("\nDigita le parole del primo linguaggio\n");
 		printf("una alla volta seguite da invio\n");
 		acquisizione_linguaggio(ling1,
-								dim1);
+					dim1);
 	}
 	
 	/* acquisire il secondo linguaggio*/
@@ -63,7 +63,7 @@ int main(void)
         printf("\nDigita le parole del secondo linguaggio\n");
 		printf("una alla volta seguite da invio\n");
 		acquisizione_linguaggio(ling2,
-								dim2);
+					dim2);
 	}
 	
 	/* inzializzo le variabili a 0 */
@@ -76,38 +76,38 @@ int main(void)
 	printf("\nL'unione dei due linguaggi è\n");
 
 	unione(ling1,
-		   ling2,
-		   dim1,
-		   dim2,
-		   diverse,
-		   s,
-		   m,
-		   n);
+	       ling2,
+	       dim1,
+	       dim2,
+	       diverse,
+	       s,
+	       m,
+	       n);
 
 	/* stampa della differenza dei due linguaggi */
 	printf("\nLa differenza dei due linguaggi è\n");
 
 	differenza(ling1,
-			   ling2,
-			   dim1,
-			   dim2);
+		   ling2,
+		   dim1,
+		   dim2);
 	
 	return(0);
 }
 
 /* definizione della funzione per allocare la memoria necessaria */
-void allocazione_memoria(char ***ling,  /* output: conterrà le parole del linguaggio */
-						 int *dim)		/* input: numero di parole nel linguaggio */
+void allocazione_memoria(char ***ling,  	/* output: conterrà le parole del linguaggio */
+			 int *dim)		/* input: numero di parole nel linguaggio */
 {
 	/* dichiarazione delle variabili locali della funzione */
-	int esito_lettura, 			/* lavoro: esito della scanf */
-		acquisizione_errata;	/* lavoro: controllo validità */
+	int esito_lettura, 		/* lavoro: esito della scanf */
+	    acquisizione_errata;	/* lavoro: controllo validità */
 	
 	do
 	{
 		printf("Da quante parole sarà formato il linguaggio? (>= 0): ");
 		esito_lettura = scanf("%d",
-						  	  dim);
+				      dim);
 		acquisizione_errata = esito_lettura != 1 || *dim < 0;
 		if (acquisizione_errata)
 			printf("Valore non accettabile!\n");
@@ -123,13 +123,13 @@ void allocazione_memoria(char ***ling,  /* output: conterrà le parole del lingu
 
 /* definizione della funzione per acquisire un linguaggio */
 void acquisizione_linguaggio(char **ling, /* output: conterrà le parole del linguaggio */
-						     int dim)	  /* input: numero di parole nel linguaggio */
+			     int dim)	  /* input: numero di parole nel linguaggio */
 						     
 {
 	/* dichiarazione delle variabili locali della funzione */
-	int verifica,	/* lavoro: verifica validità */
+	int verifica,		/* lavoro: verifica validità */
 	    a,			/* lavoro: indica la posizione all'interno del linguaggio */
-		p;			/* lavoro: indica la posizione delle lettere */
+	    p;			/* lavoro: indica la posizione delle lettere */
 	
 	if (dim > 0)
 	{
@@ -169,13 +169,13 @@ void acquisizione_linguaggio(char **ling, /* output: conterrà le parole del lin
 }
 
 void unione(char **ling1, 	/* input: parole contenute nel primo linguaggio */
-	        char **ling2, 	/* input: parole contenute secondo linguaggio */
-	        int dim1,	  	/* input: numero di parole nel primo linguaggio */
-			int dim2,		/* input: numero di parole nel secondo linguaggio */
-			int diverse, 	/* lavoro: numero di parole diverse fre loro */
-			int s,			/* lavoro: indice per la stampa dei linguaggi */
-			int m,			/* lavoro: indice per il confronto dei linguaggi */
-			int n) 		    /* lavoro: indice per il confronto dei linguaggi */
+	    char **ling2, 	/* input: parole contenute secondo linguaggio */
+	    int dim1,	  	/* input: numero di parole nel primo linguaggio */
+	    int dim2,		/* input: numero di parole nel secondo linguaggio */
+	    int diverse, 	/* lavoro: numero di parole diverse fre loro */
+	    int s,		/* lavoro: indice per la stampa dei linguaggi */
+	    int m,		/* lavoro: indice per il confronto dei linguaggi */
+	    int n) 		/* lavoro: indice per il confronto dei linguaggi */
 {
 	
 	/* caso base dell'unione ricorsiva */
@@ -189,16 +189,16 @@ void unione(char **ling1, 	/* input: parole contenute nel primo linguaggio */
 		if (dim2 == 0 && s < dim1)
 		{
 			printf("%s\n",
-				   ling1[s]);
+			       ling1[s]);
 
 			unione(ling1,
-				   ling2,
-				   dim1,
-				   dim2,
-				   diverse,
-				   s + 1,
-				   m,
-				   n);		
+			       ling2,
+			       dim1,
+			       dim2,
+			       diverse,
+			       s + 1,
+			       m,
+			       n);		
 		}
 
 		else if (dim1 == 0 && s < dim2)
@@ -207,13 +207,13 @@ void unione(char **ling1, 	/* input: parole contenute nel primo linguaggio */
 				   ling2[s]);
 
 			unione(ling1,
-				   ling2,
-				   dim1,
-				   dim2,
-				   diverse,
-				   s + 1,
-				   m,
-				   n);
+			       ling2,
+			       dim1,
+			       dim2,
+			       diverse,
+			       s + 1,
+			       m,
+			       n);
 		}
 
 		else if (dim1 > 0 && dim2 > 0)
@@ -224,13 +224,13 @@ void unione(char **ling1, 	/* input: parole contenute nel primo linguaggio */
 				       ling1[s]);
 
 				unione(ling1,
-					   ling2,
-					   dim1,
-					   dim2,
-					   diverse,
-					   s + 1,
-					   m,
-					   n);
+				       ling2,
+				       dim1,
+				       dim2,
+				       diverse,
+				       s + 1,
+				       m,
+				       n);
 			}
 			else
 			{
@@ -243,37 +243,37 @@ void unione(char **ling1, 	/* input: parole contenute nel primo linguaggio */
 				}
 				if (n < (dim1 - 1))
 					unione(ling1,
-						   ling2,
-						   dim1,
-						   dim2,
-						   diverse,
-						   s,
-						   m,
-						   n + 1);		   
+					       ling2,
+					       dim1,
+					       dim2,
+					       diverse,
+					       s,
+					       m,
+					       n + 1);		   
 				else if (m < (dim2 - 1))
 					unione(ling1,
-						   ling2,
-						   dim1,
-						   dim2,
-						   diverse = 0,
-						   s,
-						   m + 1,
-						   n = 0);
+					       ling2,
+					       dim1,
+					       dim2,
+					       diverse = 0,
+					       s,
+					       m + 1,
+					       n = 0);
 			}
 		}
 	}
 }
 
-void differenza(char **ling1,
-				char **ling2,
-				int dim1,
-				int dim2)
+void differenza(char **ling1, 		/* input: parole contenute nel primo linguaggio */
+	        char **ling2, 		/* input: parole contenute secondo linguaggio */
+	        int dim1,	  	/* input: numero di parole nel primo linguaggio */
+	        int dim2,		/* input: numero di parole nel secondo linguaggio */
 {
 	/* dichiarazione delle variabili locali della funzione */
 	int d,			/* lavoro: permette la stampa del risultato della differenza*/
-		x,			/* lavoro: permette la stampa del risultato della differenza*/
-		y,			/* lavoro: permette la ripetizione del confronto fra parole */
-		diff = 0;	/* lavoro: numero di parole differenti */
+	    x,			/* lavoro: permette la stampa del risultato della differenza*/
+	    y,			/* lavoro: permette la ripetizione del confronto fra parole */
+	    diff = 0;		/* lavoro: numero di parole differenti */
 	
 	/* caso in cui il primo linguaggio o entrambi siano vuoti */
 	if (dim1 == 0 || (dim1 == 0 && dim2 == 0))
@@ -286,7 +286,7 @@ void differenza(char **ling1,
 	{
 		for (d = 0; d < dim1; d++)
 			printf("%s\n",
-				   ling1[d]);
+			       ling1[d]);
 	}
 	/* caso in cui in entrambi i linguaggi non siano vuoti */
 	else if (dim1 > 0 && dim2 > 0)
