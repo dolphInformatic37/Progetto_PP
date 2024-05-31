@@ -1,73 +1,84 @@
-###Testing del Programma
+Testing del Programma
+
 I test effettuati rivelano che il programma accetta sia linguaggi sia stringhe vuote: se durante
 l’acquisizione di una sequenza l’utente preme invio senza aver prima digitato almeno un carattere
 non di spaziatura, il programma non avanza. Analogamente, se l’utente digita valori o caratteri
 non compresi fra quelli disponibili, il programma emette un messaggio di invalidità di quanto
 inserito e chiede di effettuare nuovamente l’inserimento.
-##Test 1
+
+Test 1
 Numero di sequenze nel primo linguaggio: 0
 Numero di sequenze nel secondo linguaggio: 0
 Sequenze inserite nel primo linguaggio: nessuna
 Sequenze inserite nel secondo linguaggio: nessuna
 Unione risultante: insieme vuoto
 Differenza risultante: insieme vuoto
-##Test 2
+
+Test 2
 Numero di sequenze nel primo linguaggio: 3
 Numero di sequenze nel secondo linguaggio: 0
 Sequenze inserite nel primo linguaggio: aa, eio, uuuuuu
 Sequenze inserite nel secondo linguaggio: nessuna
 Unione risultante: aa, eio, uuuuuu
 Differenza risultante: aa, eio, uuuuuu
-##Test 3
+
+Test 3
 Numero di sequenze nel primo linguaggio: 0
 Numero di sequenze nel secondo linguaggio: 2
 Sequenze inserite nel primo linguaggio: nessuna
 Sequenze inserite nel secondo linguaggio: uioieeo, aaaaaa
 Unione risultante: uioieeo, aaaaaa
 Differenza risultante: insieme vuoto
-##Test 4
+
+Test 4
 Numero di sequenze nel primo linguaggio: 1
 Numero di sequenze nel secondo linguaggio: 1
 Sequenze inserite nel primo linguaggio: aeiou
 Sequenze inserite nel secondo linguaggio: uoiea
 Unione risultante: aeiou, uoeia
 Differenza risultante: aeiou
-##Test 5
+
+Test 5
 Numero di sequenze nel primo linguaggio: 1
 Numero di sequenze nel secondo linguaggio: 1
 Sequenze inserite nel primo linguaggio: v
 Sequenze inserite nel secondo linguaggio: v
 Unione risultante: v
 Differenza risultante: nessuna differenza
-##Test 6
+
+Test 6
 Numero di sequenze nel primo linguaggio: 1
 Numero di sequenze nel secondo linguaggio: 1
 Sequenze inserite nel primo linguaggio: a
 Sequenze inserite nel secondo linguaggio: v
 Unione risultante: a, v
 Differenza risultante: a
-##Test 7
+
+Test 7
 Numero di sequenze nel primo linguaggio: 1
 Numero di sequenze nel secondo linguaggio: 1
 Sequenze inserite nel primo linguaggio: v
 Sequenze inserite nel secondo linguaggio: a
 Unione risultante: v, a
 Differenza risultante: v
-##Test 8
+
+Test 8
 Numero di sequenze nel primo linguaggio: 3
 Numero di sequenze nel secondo linguaggio: 3
 Sequenze inserite nel primo linguaggio: aeiou, aaeeioou, vaoiue
 Sequenze inserite nel secondo linguaggio: aei, uuo, ouia
 Unione risultante: aeiou, aaeeioou, v, aei, uuo, ouia
 Differenza risultante: aeiou, aaeeioou, v
-##Test 9
+
+Test 9
 Numero di sequenze nel primo linguaggio: 5
 Numero di sequenze nel secondo linguaggio: 4
 Sequenze inserite nel primo linguaggio: aioeuuui, uuuioiu, e, v, o
 Sequenze inserite nel secondo linguaggio: e, vuoi, o, u
 Unione risultante: aioeuuui, uuuioiu, e, v, o, u
 Differenza risultante: aioeuuui, uuuioiu
-##Test 10
+
+Test 10
 Numero di sequenze nel primo linguaggio: 2
 Numero di sequenze nel secondo linguaggio: 7
 Sequenze inserite nel primo linguaggio: ueoia, uuuuu
